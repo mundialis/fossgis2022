@@ -1,0 +1,599 @@
+/***** Fonts *****/
+
+@font-face {
+    font-family: 'Chilanka';
+    src: url('../resources/fonts/Chilanka-Regular.woff2') format('woff2'), url('../resources/fonts/Chilanka-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kaisei HarunoUmi';
+    src: url('../resources/fonts/KaiseiHarunoUmi-Regular.woff2') format('woff2'), url('../resources/fonts/KaiseiHarunoUmi-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/***** Fallback message *****/
+
+.fallback-message {
+    font-family: sans-serif;
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+    border: 1px solid #E4C652;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+
+/***** Defaults *****/
+
+body {
+    font-family: 'Kaisei HarunoUmi', serif;
+    min-height: 950px;
+    background: #fff;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h1,
+h2,
+h3 {
+    color: #403c33;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    text-align: center;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+h2,
+p,
+li,
+table {
+    font-family: 'Chilanka', 'Open Sans', sans-serif;
+}
+
+h4 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: 0.7em;
+    text-align: justify;
+}
+
+li {
+    margin: 0.2em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0;
+}
+
+a:hover,
+a:focus {
+    color: rgb(103, 103, 103);
+}
+
+pre {
+    font-size: small;
+}
+
+code {
+    background-color: #f4f3efa6!important;
+}
+
+hr {
+    border-width: 2px;
+    border-style: solid;
+}
+
+
+/***** General Presentation *****/
+
+.step {
+    position: relative;
+    box-sizing: border-box;
+    width: 1500px;
+    height: 950px;
+    padding: 40px 60px;
+    margin: 20px auto;
+    color: rgb(90, 90, 90);
+    font-size: 30px;
+    line-height: 1.3;
+    /* border: solid red 1px; */
+}
+
+img {
+    width: 90%;
+    float: left;
+    margin-left: 40px;
+    margin-top: 0px;
+}
+
+
+/***** Welcome Slide *****/
+
+div#welcome {
+    background: url(../resources/img/newspaper-background-5.jpg);
+    background-position: unset;
+}
+
+div#welcome h3.vol1 {
+    position: absolute;
+    top: 6.3em;
+    right: 1em
+}
+
+div#welcome #welcome-actinia-header {
+    width: 245px;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+div#welcome #header-stamp {
+    position: absolute;
+    top: 2em;
+    left: 3em;
+    transform: rotate(-18deg);
+    font-size: smaller;
+    color: red;
+}
+
+div#welcome #welcome-mundialis,
+div#welcome #welcome-foss4g {
+    position: absolute;
+    width: 55px;
+    top: 6.5em;
+    /* left: 1em; */
+}
+
+div#welcome #welcome-mundialis {
+    left: 1em;
+}
+
+div#welcome #welcome-foss4g {
+    left: 3em;
+}
+
+div#welcome .content {
+    display: flex;
+}
+
+.side-column .center {
+    box-sizing: border-box;
+}
+
+.side-column-left {
+    margin-right: 2em;
+    width: 25%;
+}
+
+.side-column-right {
+    margin-left: 2em;
+    width: 10%;
+}
+
+div#welcome .side-column img {
+    width: 100%;
+    margin: 0;
+}
+
+div#welcome .side-column img.icon {
+    width: 10px;
+    padding-left: .3em;
+    padding-right: .3em;
+    float: none;
+}
+
+div#welcome .center {
+    flex-grow: 1;
+    max-width: 56%;
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: 1px solid #403c33;
+}
+
+div#welcome .center p {
+    font-size: 0.5em;
+}
+
+div#welcome .center div {
+    margin: 0;
+    height: 274px;
+    overflow: hidden;
+    margin-bottom: 1em;
+    column-span: all;
+}
+
+div#welcome .center img {
+    margin: 0;
+    width: 100%;
+    opacity: 80%;
+}
+
+
+/***** mundialis Slide *****/
+
+.impress-on-mundialis #welcome-mundialis {
+    opacity: 0.5;
+}
+
+div#mundialis h3 {
+    color: #394e50;
+}
+
+.table-img {
+    width: 320px;
+    height: 229px;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #d2d4d9;
+}
+
+.table-img img {
+    max-height: 320px;
+    max-width: none;
+    min-width: 100%;
+    min-height: 229px;
+}
+
+
+/***** actinia-intro Slides *****/
+
+
+/* TODO - remove duplicate image?*/
+
+.impress-on-actinia-intro1 div#welcome .side-column img {
+    opacity: 0;
+}
+
+div#actinia-intro2 img,
+div#actinia-intro3 img {
+    width: 77%;
+}
+
+div#actinia-intro6 img,
+div#actinia-intro7 img,
+div#actinia-intro8 img {
+    width: 100%;
+}
+
+div#actinia-intro4 img {
+    top: 3em;
+    position: absolute;
+}
+
+
+/* fade out inactive slides */
+
+.step {
+    /* opacity: 1; */
+    transition: opacity 1s;
+    margin: 0;
+}
+
+.step.active {
+    opacity: 1
+}
+
+#actinia-intro2.actinia-intro.future.step:not(.active),
+#actinia-intro2.actinia-intro.past.step:not(.active),
+#actinia-intro3.actinia-intro.future.step:not(.active),
+#actinia-intro3.actinia-intro.past.step:not(.active),
+#actinia-intro4.actinia-intro.future.step:not(.active),
+#actinia-intro4.actinia-intro.past.step:not(.active),
+#actinia-intro5.actinia-intro.future.step:not(.active),
+#actinia-intro5.actinia-intro.past.step:not(.active),
+#actinia-intro6.actinia-intro.future.step:not(.active),
+#actinia-intro6.actinia-intro.past.step:not(.active),
+#actinia-intro7.actinia-intro.future.step:not(.active),
+#actinia-intro7.actinia-intro.past.step:not(.active),
+#actinia-intro8.actinia-intro.future.step:not(.active),
+#actinia-intro8.actinia-intro.past.step:not(.active) {
+    opacity: 0
+}
+
+
+/***** features overview Slides *****/
+
+div#features {
+    background: url(../resources/img/newspaper-background-5.jpg);
+    background-position: unset;
+    padding-top: 0.2em;
+}
+
+.vl {
+    border-left: 3px solid #f0efed;
+    border-left: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+    bottom: 0;
+}
+
+div#features .left,
+div#features .right {
+    width: 50%;
+    float: left;
+}
+
+div#features .features-header-left,
+div#features .features-header-right {
+    display: inline-block;
+    margin: 0;
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+
+div#features .left .features-header-right {
+    margin-left: 17em;
+}
+
+div#features .right .features-header-left {
+    margin-left: 1em;
+}
+
+div#features .right .features-header-right {
+    margin-left: 15em;
+}
+
+div#features #welcome-actinia-header {
+    width: 60px;
+    position: absolute;
+    top: 0.2em;
+    right: 36em;
+}
+
+div#features #welcome-foss4g {
+    position: absolute;
+    width: 40px;
+    top: 0.3em;
+    right: 13em;
+}
+
+.impress-on-features-interim div#features,
+.impress-on-features-STRDS div#features,
+.impress-on-mapsetsizes div#features,
+.impress-on-features-version div#features,
+.impress-on-geotiff div#features,
+.impress-on-kleinanzeigen div#features,
+.impress-on-openeo div#features,
+.impress-on-amp-self-desc div#features,
+.impress-on-actinia-tpl div#features,
+.impress-on-actinia-tpl-crud div#features,
+.impress-on-actinia-tpl-processing div#features,
+.impress-on-projects div#features,
+.impress-on-outlook div#features {
+    opacity: 0.3;
+}
+
+
+/***** features single Slides *****/
+
+
+/* highlight.js with markdown.js does not work after a list
+Workaround: add "---" */
+
+div.features hr {
+    border: none;
+}
+
+div.features-elements-inline ul {
+    width: 49%;
+}
+
+div.features-elements-inline ul,
+div.features-elements-inline pre,
+div.features-elements-inline p,
+div.features-elements-inline img,
+div.features-elements-inline hr {
+    display: inline-block;
+}
+
+div.features-elements-inline ul ul {
+    width: 100%
+}
+
+div.features .left,
+div.features .right {
+    width: 50%;
+    float: left;
+}
+
+div.pre-large pre {
+    font-size: large;
+    margin-bottom: 4em;
+}
+
+
+/***** features interim results Slides *****/
+
+div#features-interim pre {
+    font-size: xx-large;
+}
+
+
+/***** features mapsetsizes Slides *****/
+
+div#mapsetsizes img {
+    width: 400px;
+}
+
+div#mapsetsizes pre {
+    position: absolute;
+}
+
+div#mapsetsizes pre:nth-of-type(1) {
+    top: 33px;
+}
+
+div#mapsetsizes pre:nth-of-type(2) {
+    top: 290px;
+}
+
+div#mapsetsizes pre:nth-of-type(3) {
+    top: 450px;
+}
+
+
+/***** features geotiff Slides *****/
+
+div#geotiff img {
+    margin: 0;
+}
+
+
+/***** features kleinanzeigen Slides *****/
+
+div#kleinanzeigen {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 4px solid #403c33;
+}
+
+div#kleinanzeigen h4 {
+    column-span: all;
+    margin-bottom: 3em;
+}
+
+div#kleinanzeigen img#cross {
+    width: 15px;
+    margin-right: 15px;
+}
+
+div#kleinanzeigen ul {
+    font-size: 0.7em;
+}
+
+
+/***** features openeo Slides *****/
+
+div#openeo img {
+    margin: 0;
+    width: 80%;
+}
+
+
+/***** features actinia tpl Slides *****/
+
+div#actinia-tpl p {
+    display: block;
+}
+
+div#actinia-tpl-processing img {
+    width: 444px;
+}
+
+
+/***** outlook Slides *****/
+
+div#outlook img {
+    width: 300px;
+    top: 6.5em;
+    margin: 0;
+    float: none;
+}
+
+div#outlook hr {
+    margin-bottom: 1.5em
+}
+
+
+/***** projects Slides *****/
+
+div#projects .left,
+div#projects .center,
+div#projects .right {
+    width: 33%;
+    float: left;
+}
+
+div#projects .flexparent {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1em;
+}
+
+div#projects box {
+    flex-grow: 1;
+    height: 100px;
+    border: solid #97BF0D 5px;
+    padding: 1%;
+    margin: 1%;
+    width: 28%;
+    display: flex;
+    text-align: center;
+}
+
+div#projects box p {
+    margin: auto;
+}
+
+div#projects img {
+    width: 100px
+}
+
+
+/***** the-end Slides *****/
+
+div#overview h1 {
+    font-size: 2em;
+    text-align: left;
+    margin-left: 1em;
+}
+
+div#overview h1:nth-of-type(1) {
+    margin-top: 2em
+}
+
+
+/* playground */
+
+
+/* .impress-enabled .step {
+    opacity: 0.3;
+    transition: opacity 1s;
+    margin: 0;
+} */
+
+
+/* .impress-enabled .step.active { opacity: 1 } */
+
+
+/* #img121314.step:not(.active) {
+    opacity: 0;
+} */
+
+
+/* fade out inactive slides */
+
+
+/* .step:not(.active) {
+    opacity: 0.3;
+} */
+
+
+/* background-color: rgb(238, 218, 19);
+background-color: rgb(121, 60, 151);
+background-color: rgb(222, 59, 38);
+background-color: rgb(64, 187, 199);
+background-color: rgb(235, 18, 136);
+background-color: rgb(237, 126, 34); */

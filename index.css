@@ -1,0 +1,138 @@
+/* https://geoserver.mundialis.de/geoserver/sentinelMosaic/wms?SERVICE=WMS&VERSION=1.1.0&REQUEST=GetMap&TRANSPARENT=true&LAYERS=sentinelMosaic%3Aart_118A04&bbox=-12664892.96431236,4649035.317864986,-12649045.017685313,4660921.275761676&FORMAT=image%2Fpng&SRS=EPSG%3A3857&STYLES=&WIDTH=1180&HEIGHT=886 */
+
+body {
+    width: 100%;
+    font-family: "Open Sans", "Helvetica Neue", helvetica, arial, verdana, sans-serif;
+    line-height: 1.4em;
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+h1, h2, h1 a {
+    color: #0e1058;
+    text-align: center;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#f4glogo {
+    width: 2em;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    padding: 2em;
+    margin: auto;
+    margin-top: 3em;
+    /* margin-left: 14em;
+    margin-right: 14em; */
+    margin-bottom: 0px;
+    /* border: solid #0e1058 5px; */
+    border-radius: 3px;
+}
+
+.flexparent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexchild {
+    width: 28%;
+    width: 16%;
+    min-width: 8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.3em;
+    color: white;
+    /* border: solid #0e1058 5px; */
+    padding: 1%;
+    margin: 1%;
+}
+
+.flexchild:nth-child(1) {
+    /* background-color: #eb7f00; */
+    background-image: url('resources/img/sentinelMosaic-art_040302.png');
+}
+.flexchild:nth-child(2) {
+    /* background-color: #eb7f00; */
+    background-image: url('resources/img/sentinelMosaic-art_080403.png');
+}
+.flexchild:nth-child(3) {
+    /* background-color: #97bf0d; */
+    background-image: url('resources/img/sentinelMosaic-art_12118A.png');
+}
+.flexchild:nth-child(4) {
+    /* background-color: #0e1058; */
+    background-image: url('resources/img/sentinelMosaic-art_118A04.png');
+}
+.flexchild:nth-child(5) {
+    /* background-color: #eb7f00; */
+    background-image: url('resources/img/sentinelMosaic-art_8A1104.png');
+}
+.flexchild:nth-child(6) {
+    /* background-color: #eb7f00; */
+    background-image: url('resources/img/sentinelMosaic-art_040302.png');
+}
+
+.flexchildhalf {
+    width: 45%;
+}
+
+.flexchild:hover {
+    /* box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.34); */
+}
+
+.event > .maininfo {
+    text-align: right;
+    letter-spacing: 0.15em;
+}
+
+.event > .moreinfos {
+    transition: visibility 0s, opacity 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.event:hover > .moreinfos {
+    visibility: visible;
+    opacity: 1;
+}
+
+img.blockimg {
+    width: 80%;
+    display: block;
+    margin: 2em;
+}
+
+img.fleximg {
+    width: 100%;
+}
+
+@media (max-width: 1500px) {
+    main {
+        margin: 0px;
+        height: 100%;
+    }
+    .flexparent {
+        width: 100%;
+        height: 100%;
+     }
+    .flexchild {
+        width: 90%;
+        min-width: 1em;
+    }
+}
