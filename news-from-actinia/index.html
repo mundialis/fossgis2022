@@ -186,7 +186,7 @@ Template Management
 
 * Nach jedem erfolgreichen Schritt wird das temporäre Mapset gespeichert
 * Nach erfolgreichen persistenten Prozessen wird es entfernt
-* Kann gelöscht werden per HTTP DELETE `/api/v1/resource_storage`
+* Kann gelöscht werden per HTTP DELETE `/api/v3/resource_storage`
 ---
     [MISC]
     ...
@@ -289,12 +289,14 @@ __Eine bestimmte Iteration zurückgeben per HTTP GET__ `resources/{user_id}/{res
 </div>
 
 <div id="features-version" class="step slide markdown features" data-rel-x="0" data-rel-y="20000" data-scale="20">
-#### Verbessern der Versionsausgabe (Enhance version output) (#132) [0.99.18]
+#### Verbessern der Versionsausgabe (Enhance version output) (#132) [0.99.18], (#283) [2.2.0], (#252) [3.1.0]
 
 * Detailiertere Ausgabe des `/version` Endpunktes
-* Beinhaltet jetzt die GRASS GIS Version
+* Beinhaltet GRASS GIS Version
 * Beinhaltet die Versionen der installierten Plugins
 * Beinhaltet Python Version
+* Beinhaltet api Version, die in #278 aus actinia-core ausgelagert wurden
+* Beinhaltet "running_since" und flexible zusätzliche Attribute
 ---
     {
         "api_version": "3.0.1",
@@ -335,27 +337,42 @@ __Eine bestimmte Iteration zurückgeben per HTTP GET__ `resources/{user_id}/{res
 * Ermöglicht den Upload von lokalen GeoTIFFs in actinia
 * Per HTTP POST `/locations/nc_spm_08/mapsets/test_mapset/raster_layers/myraster`
 
+
+#### Lokaler Vektor-Import (Add vector upload) (#260) [2.0.0]
+
+* Ermöglicht den Upload von lokalen Vektordaten in actinia
+* Per HTTP POST `/locations/nc_spm_08/mapsets/test_mapset/vector_layers/myvector`
+
+
 ![S2 color composite of Buenos Aires](resources/img/buenos_square_040302_tiny.jpg)
 </div>
 
 
-<div id="kleinanzeigen" class="step slide" data-rel-x="0" data-rel-y="50000" data-scale="28">
+<div id="kleinanzeigen" class="step slide" data-rel-x="0" data-rel-y="55000" data-scale="28">
 
 <h4>Weitere Neuigkeiten, Features, Verbesserungen</h4>
 <hr>
-<p><b>helm chart</b> für kubernetes / openshift https://github.com/mundialis/helm-charts/tree/main/charts/actinia</p>
+<p><b><a href="https://github.com/mundialis/helm-charts">helm chart</a></b> für kubernetes / openshift</p>
 <hr>
-<p>STDOUT Logger mit optionalem "colored" oder JSON-Formatter - Enable STDOUT logging (#47) [0.99.8]</p>
+<p>STDOUT Logger mit optionalem "colored" oder JSON-Formatter (#47) [0.99.8]</p>
+<hr>
+<p><b>Zitierbarer actinia source code mit <a href="https://zenodo.org/record/5909655">DOI</a></b> (#300) [3.0.1]</p>
 <hr>
 <p>Fügt STDOUT als `process_result` hinzu für Endpunkt `locations/{location}}/mapset/{mapset} /processing_async` (#149) [0.99.23]</p>
 <hr>
 <p>Alle gesperrten Mapsets anzeigen (#200) [1.0.0]</p>
 <hr>
+<p>Auflistung aller verfügbaren Mapsets (#249) [2.0.0]</p>
+<hr>
 <p>raster_exporter: COG Support hinzugefügt (#108)[0.99.12]</p>
 <hr>
-<p>band_reference und number_of_bands für Image Collections hinzugefügt (<b>GRASS GIS 7.9+</b>) (#70) [0.99.3]/p>
+<p>Erlaube "&" in Parameterwerten für r.mapcalc u.a. (#253) [2.0.0], (#308) [3.1.0]</p>
+<hr>
+<p>band_reference und number_of_bands für Image Collections hinzugefügt (GRASS GIS 7.9+) (#70) [0.99.3]/p>
 <hr>
 <p>Exporter erweitert (overviews #66, LZW compression #85, COG support #108, default vector GPKG #157)</p>
+<hr>
+<p>Wiederholte Versuche des Webhooks (#299) [3.1.0]</p>
 <hr>
 <img id="cross" src="resources/img/cross.png"><p>actinia-gdi</p>
 <p>Aufteilung von actinia-gdi in multiple Plugins [0.99.22]</p>
@@ -363,16 +380,17 @@ __Eine bestimmte Iteration zurückgeben per HTTP GET__ `resources/{user_id}/{res
 <li><a href="https://github.com/mundialis/actinia-metadata-plugin">actinia-metadata-plugin</a></li>
 <li><a href="https://github.com/mundialis/actinia-gdi">actinia-gdi, EOL</a></li>
 </ul>
-
+<hr>
+<p>JSON Output für STDOUT Parser (#239), (#240) [1.2.0]</p>
 <hr>
 
-<p>Qualitätsverbesserungen (Verbesserung der Tests, lint, Security Check - CodeQL), mehr Sicherheit in der Antwort mit Webhook (#163)</p>
+<p>Qualitätsverbesserungen (Verbesserung der Tests, lint, Security Check - CodeQL, Dev Setup), mehr Sicherheit in der Antwort mit Webhook (#163)</p>
 <hr>
-<p>ace, importer, exporter: Auslagerung in separate Repos (#160) [0.99.26]</p>
-<ul><li><a href="https://github.com/mundialis/ace">ace</a></li>
-<li><a href="https://github.com/mundialis/exporter">exporter</a></li>
-<li><a href="https://github.com/mundialis/importer">importer</a></li>
-</ul>
+<p><b>STAC</b> in actinia, <b>actinia-stac-plugin</b> </p>
+<hr>
+<p><a href="https://github.com/mundialis/ace">ace</a>,
+ <a href="https://github.com/mundialis/exporter">exporter</a>,
+ <a href="https://github.com/mundialis/importer">importer</a>: Auslagerung in separate Repos (#160) [0.99.26]</p>
 <hr>
 <p>Changelog eingeführt (#183) [0.99.28]</p>
 <hr>
@@ -381,7 +399,6 @@ __Eine bestimmte Iteration zurückgeben per HTTP GET__ `resources/{user_id}/{res
 <p>Verbesserte GHA</p>
 <ul><li>Docker build und Push (#165) [1.1.0]</li>
 <li>Automatisierte Tests hinzugefügt (#166) [0.99.27]</li></ul>
-<hr>
 </div>
 
 
@@ -589,14 +606,14 @@ __Eine bestimmte Iteration zurückgeben per HTTP GET__ `resources/{user_id}/{res
 #### actinia-module-plugin Template Management - CRUD
 Man kann jetzt Templates erstellen, lesen, aktualisieren und löschen via HTTP REST API
 
-    curl -u XXX -X POST -H "Content-Type: application/json" -d "${JSON}" https://actinia-dev.mundialis.de/api/v1/actinia_templates
-    curl -u XXX -X GET https://actinia-dev.mundialis.de/api/v1/actinia_templates/elevation_demo
-    curl -u XXX -X PUT -H "Content-Type: application/json" -d "${JSON}" https://actinia-dev.mundialis.de/api/v1/actinia_templates/elevation_demo
-    curl -u XXX -X DELETE https://actinia-dev.mundialis.de/api/v1/actinia_templates/elevation_demo
+    curl -u XXX -X POST -H "Content-Type: application/json" -d "${JSON}" https://actinia-dev.mundialis.de/api/v3/actinia_templates
+    curl -u XXX -X GET https://actinia-dev.mundialis.de/api/v3/actinia_templates/elevation_demo
+    curl -u XXX -X PUT -H "Content-Type: application/json" -d "${JSON}" https://actinia-dev.mundialis.de/api/v3/actinia_templates/elevation_demo
+    curl -u XXX -X DELETE https://actinia-dev.mundialis.de/api/v3/actinia_templates/elevation_demo
 
 #### Neu erstellte Templates sind dann auch in den Modulen verfügbar:
 
-    curl -u XXX -X GET "https://actinia-dev.mundialis.de/api/v1/modules/elevation_demo"
+    curl -u XXX -X GET "https://actinia-dev.mundialis.de/api/v3/modules/elevation_demo"
 
     {
         "categories": [
@@ -642,7 +659,7 @@ Jetzt können wir unser Template in einem Prozess ausprobieren! - Wir verwenden 
         }
 
 
-    BASE_URL="https://actinia-dev.mundialis.de/api/v1/locations/nc_spm_08/mapsets/foss4g_demo"
+    BASE_URL="https://actinia-dev.mundialis.de/api/v3/locations/nc_spm_08/mapsets/foss4g_demo"
 
     curl -u XXX -X POST -H "Content-Type: application/json" -d "${JSON}" \
       $BASE_URL/processing
