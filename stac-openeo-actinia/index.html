@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>STAC und openEO in der Praxis</title>
+    <link href="css/impress-common.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!-- Some images that are fixed to background in the css -->
+<img id="stac-bg-image" class="bg" src="resources/img/STAC-03.png">
+<img id="openeo-bg-image" class="bg" src="resources/img/openeo_logo.png">
+<img id="actinia-bg-image" class="bg" src="resources/img/actinia_Logo_highres.svg">
+
+
+
+<div id="impress" data-transition-duration="1000">
+
+<!-- WELCOME ################################################################-->
+<div id="welcome" class="step" data-scale="50" data-x="0" data-y="0">
+<h1>STAC und openEO in der Praxis:</h1>
+<h2>Integration in actinia</h2>
+<div class="flexparent">
+  <img class="flexchild"  src="resources/img/actinia_Logo_highres.svg">
+  <img class="flexchild" src="resources/img/STAC-03.png">
+  <img class="flexchild"  src="resources/img/openeo_logo.png">
+</div>
+<p class="center">Carmen Tawalika - mundialis GmbH - FOSSGIS 2022</p>
+</div>
+
+<!-- MUNDIALIS ##############################################################-->
+<div id="mundialis" class="step slide" data-x="0" data-y="20000" data-scale="5" data-z="10">
+  <h2>mundialis GmbH & Co. KG</h2>
+  <table id="ma">
+  <tr>
+  <td><div class="table-img"><img src="resources/img/MA/tb_2019.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/mj_2019.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_202010_Mundialis_Loki.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201803_Mundialis_MM.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JHE_cut.jpg"></div></td>
+</tr>
+<tr>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_CT.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201803_Mundialis_AW.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_202010_Mundialis_GR.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JULI0220_JH_Zuschnitt_kl.jpg"></td>
+  <td><div class="table-img"><img src="resources/img/MA/JULI0187_MMA_Zuschnitt_kl.jpg"></td>
+</tr>
+<tr>
+  <td><div class="table-img"><img src="resources/img/MA/ME_cut.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_JO.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_TA.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_HP.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_MN.jpg"></div></td>
+</tr>
+</table>
+</div>
+
+<!-- CONTENT ##############################################################-->
+<div id="content" class="step markdown" data-scale="50" data-x="0" data-y="0">
+<!-- * actinia
+* STAC
+* actinia + STAC
+  * actinia-stac-plugin
+  * importer
+  * exporter
+* openEO
+* actinia + STAC + openEO
+  * openeo-grassgis-driver -->
+</div>
+
+<!-- ACTINIA ################################################################-->
+<div id="actinia-intro1" class="step slide" data-x="-22000" data-y="-3000" data-scale="10">
+<a href="https://mundialis.github.io/fossgis2020/grass-gis-in-the-cloud-actinia-geoprocessing/index.html">
+<img src="resources/img/actinia-intro-de/1.svg"></a>
+</div>
+<div id="actinia-intro2" class="step slide actinia-intro" data-rel-x="-1600" data-rel-y="-900">
+<img src="resources/img/actinia-intro/2_grass.svg">
+</div>
+<div id="actinia-intro3" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/3_grass.svg">
+</div>
+<div id="actinia-intro4" class="step slide actinia-intro" data-rel-x="1200" data-rel-y="300">
+<img src="resources/img/actinia-intro-de/4_rest.svg">
+</div>
+<div id="actinia-intro5" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/5_cloud.svg">
+</div>
+<div id="actinia-intro6" class="step slide actinia-intro" data-rel-x="1400" data-rel-y="0">
+<img src="resources/img/actinia-intro/6_example.svg">
+</div>
+<div id="actinia-intro7" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/7_example.svg">
+</div>
+<div id="actinia-intro8" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro-de/8_example.svg">
+</div>
+
+<div id="full" class="step slide" data-x="0" data-y="0" data-scale="50">
+</div>
+
+
+<!-- STAC### ################################################################-->
+<div id="stac" class="step markdown" data-x="0" data-y="-5000" data-scale="5">
+# STAC
+
+- __SpatioTemporal Asset Catalog__
+- Gemeinsame Sprache zur Beschreibung raum- und zeitbezogener Daten
+- Ziele:
+  - Daten können __leichter indiziert__ werden
+  - Daten können __leichter gefunden__ werden
+  - __kein neuer Code nötig__ bei Veröffentlichung von neuem Datensatz / API
+- __Konzepte__
+  - `Item`
+  - `Catalog`
+  - und `Collection`
+</div>
+
+<div id="stac-item" class="step markdown" data-x="-6000" data-y="0" data-scale="3">
+# STAC Item
+  * An Item represents a single spatiotemporal asset as GeoJSON so it can be searched.
+  * Items require a link back to the collection they are part of. If a field is the same for all items in one collection, the field should be moved to the collection
+  * Items can only belong to one Collection
+  * Items are always tree leaves
+  * A STAC item is always a GeoJSON with geometry (bbox), properties and links. For properties, the field `datetime` is required
+  * Other fields might be thumbnail, asset links (download or streaming access), relationship links, core set of Common Metadata + STAC Content Extensions (see below)
+</div>
+
+<div id="stac-catalog" class="step markdown" data-x="0" data-y="0" data-scale="3">
+# STAC Catalog
+  * The Catalog specification provides structural elements, to group Items and Collections.
+  * A catalog/collection is typically the "entry point" into a STAC object hierarchy (root endpoint).
+  * Catalogs are used for two main things:
+    * Split overly large collections into groups or
+    * Group collections into a catalog of Collections (e.g. as entry point).
+  * A catalog has an id, description, stac_version and links
+</div>
+
+<div id="stac-collection" class="step markdown" data-x="6000" data-y="0" data-scale="3">
+# STAC Collection
+  * Collections are catalogs, that add more required metadata and describe a group of related Items.
+  * A Collection can have parent Catalog and Collection objects, as well as child Item, Catalog, and Collection objects. It must have none
+  * Ideally Collections also link to fuller metadata (ISO 19115, etc) when available
+  * A collection has all fields of a catalog + license and extent
+</div>
+<div id="full2" class="step slide" data-x="0" data-y="0" data-scale="50">
+</div>
+
+
+
+<!-- STAC + ACTINIA #########################################################-->
+<div id="actinia-stac-plugin1" class="step markdown" data-x="-12000" data-y="-5000" data-scale="2">
+# actinia-stac-plugin
+Über das Plugin wird actinia selbst zu einem STAC. Bisher wurden zwei Konzepte implementiert:
+
+- __Instances__: Virtueller Raum, in dem der Benutzer STAC-Collections speichern kann
+
+- __Collections__: Bezieht sich auf die STAC-Collections, die innerhalb einer Instanz gespeichert sind. Es wird eine interne ID zugeordnet: `stac.<<stac_instance_id>>.rastercube.<<stac_collection_id>>`
+
+</div>
+
+<div id="actinia-stac-plugin2" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# GET instances
+<!-- 2 images -->
+- Listet alle Instances
+- Details über spezifische Instance
+- Spezifische Instance zeigt gespeicherte Collections
+- Zeigt ID, link in actinia und Ursprung (root URL) der Collections
+</div>
+
+<div id="actinia-stac-plugin3" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# GET collections
+<!-- 2 images -->
+- Listet alle Collections
+- Details/Inhalt über spezifische Collection
+- Dieser Inhalt sieht genauso aus, wie im Ursprung (root URL)
+</div>
+
+<div id="actinia-stac-plugin4" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# POST instances
+<!-- 2 images -->
+- Erstellen einer neuen Instanz
+- So kann der Nutzer die Collections nach Themen(-bereichen) oder jeder gewünschten Organisationsebene organisieren
+</div>
+
+<div id="actinia-stac-plugin5" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# POST collections
+<!-- 2 images -->
+- Erstellen einer neuen Collection
+- Diese Collections muss zu einer bestehenden Instanz hinzugefügt werden
+</div>
+
+<div id="actinia-stac-plugin6" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# DELETE instances
+<!-- 2 images -->
+- Löschen einer Instanz
+</div>
+
+<div id="actinia-stac-plugin7" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# DELETE collections
+<!-- 2 images -->
+- Löschen einer Collection
+</div>
+
+<div id="actinia-stac-importer" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# actinia STAC importer
+<!-- i image -->
+
+Die STAC-Importer-Funktionalität in actinia-core fungiert als Brücke zwischen dem STAC-Plugin und actinia-ore.
+
+Diese Brücke ermöglicht es dem Benutzer, Prozessketten zu erstellen, die die Vorteile der in den Instanzen gespeicherten STAC-Collections nutzen.
+
+Darüber hinaus stehen dem Benutzer räumlich-zeitliche und semantische Labels zur Verfügung, die die Dauer des Prozesses durch die Reduzierung der zu analysierenden Elemente verbessern.
+</div>
+
+<div id="actinia-stac-exporter" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# actinia STAC exporter
+<!-- 1 image -->
+
+Die STAC-Exporter-Funktionalität in actinia-core trägt zur Vielfalt der Exportformate bei.
+
+Sobald die STAC-Metadatenoption in der Prozesskette definiert ist, wird der Benutzer mit einem STAC-Ergebniskatalog initialisiert (nur beim ersten Mal) und innerhalb dieses Katalogs wird ein STAC-Element erstellt
+
+Das STAC-Element wird erstellt und mit allen Metadaten aus der Ergebnis-Rasterkarte gefüttert (das einzige derzeit unterstützte Format)
+</div>
+
+<div id="full3" class="step slide" data-x="0" data-y="0" data-scale="50">
+</div>
+
+<!--
+<div id="openeo" class="step markdown" data-rel-x="0" data-rel-y="1000">
+# openEO API
+</div>
+
+<div id="stac-openeo" class="step markdown" data-rel-x="0" data-rel-y="1000">
+# common endpoint
+
+
+> The Collection specification is used standalone quite easily - it is used to describe
+an aggregation of data, and doesn't require links down to sub-catalogs and Items.
+[...] They often have an optimized internal format that doesn't make sense to expose
+as Items. OpenEO and Google Earth Engine are two examples that only use STAC
+collections, ..
+
+# STAC API recommendations
+* data discovery as in openeo (STAC + OGC features)
+  * GET /collections
+  * GET /collections/{collection_id}
+* STAC full implementation, **not** in openeo
+  * GET /collections/{collectionId}/items
+  * GET /collections/{collectionId}/items/{featureId}
+
+</div> -->
+
+<!--
+<div id="actinia-stac-openeo" class="step markdown" data-rel-x="0" data-rel-y="1000">
+# actinia + STAC + openEO: openeo-grassgis-driver
+</div> -->
+
+
+<!-- <div id="conclusion" class="step markdown" data-rel-x="1000" data-rel-y="1000">
+# Conclusion
+</div>
+
+<div id="overview" class="step" data-x="3000" data-y="2000" data-scale="9" style="pointer-events: none;">
+</div>
+</div> -->
+
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+<script type="text/javascript" src="resources/extras/highlight/highlight.pack.js"></script>
+<!-- <script type="text/javascript" src="resources/extras/mermaid/mermaid.min.js"></script>-->
+<script type="text/javascript" src="resources/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+/***** Fonts *****/
+
+@font-face {
+    font-family: 'ZenTokyoZoo';
+    src: url('../resources/fonts/ZenTokyoZoo-Regular.woff2') format('woff2'), url('../resources/fonts/ZenTokyoZoo-Regular.woff') format('woff');;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ZenMaruGothic';
+    src: url('../resources/fonts/ZenMaruGothic-Regular.woff2') format('woff2'), url('../resources/fonts/ZenMaruGothic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(fonts.css);
+
+
+/***** Fallback message *****/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+
+/***** Defaults *****/
+
+body {
+    font-family: 'ZenMaruGothic', 'Open Sans', sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
+    min-height: 950px;
+    background: #fff;
+}
+
+h1 {
+    font-family: 'ZenTokyoZoo', 'Open Sans', sans-serif;
+    font-size: 3em;
+}
+
+h1,
+h2,
+h3 {
+    color: #403c33;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    text-align: center;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+h2,
+p,
+li,
+table {
+    /* font-family: 'Chilanka', 'Open Sans', sans-serif; */
+}
+
+h4 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    /* font-size: 0.7em; */
+    font-size: 1.2em;
+    /* text-align: justify; */
+}
+
+li {
+    margin: 0.2em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0;
+}
+
+a:hover,
+a:focus {
+    color: rgb(103, 103, 103);
+}
+
+pre {
+    font-size: small;
+}
+
+code {
+    background-color: #f4f3efa6!important;
+}
+
+hr {
+    border-width: 2px;
+    border-style: solid;
+}
+
+
+/***** General Presentation *****/
+.step {
+    position: relative;
+    box-sizing: border-box;
+    width: 1500px;
+    height: 950px;
+    padding: 40px 60px;
+    margin: 20px auto;
+    color: rgb(90, 90, 90);
+    font-size: 30px;
+    line-height: 1.3;
+    border: solid red 1px;
+}
+
+/*
+    Make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.3;
+    transition: opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+
+
+/* Highlight.js used for coloring pre > code blocks. */
+pre > code {
+    font-size: 14px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Inline code, no Highlight.js */
+code {
+    font-family: "Cutive mono","Courier New", monospace;
+    background-color: #f4f3efa6!important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    /* background: rgba(200,200,200,0.3);
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+    border-bottom: 1px solid rgba(100,100,100,0.4);
+    border-left:   1px solid rgba(100,100,100,0.4);
+    transition:         0.5s; */
+}
+a:hover,
+a:focus {
+    /* background: rgba(200,200,200,1);
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5); */
+    color: rgb(103, 103, 103);
+}
+
+/* blockquote {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;
+}
+
+em {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+strong {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+q {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+strike {
+    opacity: 0.7;
+}
+
+small {
+    font-size: 0.4em;
+}
+
+*/
+/* img {
+    width: 300px
+} */
+img {
+    width: 90%;
+    float: left;
+    margin-left: 40px;
+    margin-top: 0px;
+}
+
+/****************** Background images **********************************************/
+img.bg {
+    position: fixed;
+    z-index: -100;
+    opacity: 0;
+    height: 50%;
+    width: auto;
+    transition:  opacity 2s;
+}
+#actinia-bg-image {
+    right: 0px;
+    top: 0px;
+    height: 20em;
+}
+body.impress-on-stac #stac-bg-image,
+body.impress-on-stac-item #stac-bg-image,
+body.impress-on-stac-collection #stac-bg-image,
+body.impress-on-stac-catalog #stac-bg-image,
+body.impress-on-stac-openeo #stac-bg-image,
+body.impress-on-actinia-stac-openeo #stac-bg-image,
+body.impress-on-conclusion #stac-bg-image,
+body.impress-on-overview #stac-bg-image {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+#openeo-bg-image {
+    left: 0px;
+    bottom: 0px;
+    height: 14em;
+}
+body.impress-on-actinia #actinia-bg-image,
+body.impress-on-actinia-stac-plugin #actinia-bg-image,
+body.impress-on-importer#actinia-bg-image,
+body.impress-on-exporter#actinia-bg-image,
+body.impress-on-actinia-stac-openeo #actinia-bg-image,
+body.impress-on-conclusion #actinia-bg-image,
+body.impress-on-overview #actinia-bg-image {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+#stac-bg-image {
+    right: 0px;
+    bottom: 0px;
+    height: 20em;
+}
+body.impress-on-openeo #openeo-bg-image,
+body.impress-on-stac-openeo #openeo-bg-image,
+body.impress-on-actinia-stac-openeo #openeo-bg-image,
+body.impress-on-conclusion #openeo-bg-image,
+body.impress-on-overview #openeo-bg-image {
+    opacity: 0.7;
+    transition:  opacity 2s;
+}
+
+/*************** Slide specific things ****************************/
+
+/***** welcome *****/
+.flexparent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexchild {
+    margin: 5%;
+}
+
+img.flexchild {
+    width: 300px
+}
+
+p.center {
+    text-align: center;
+}
+
+#welcome .flexchild {
+    margin-top: 7em;
+}
+
+/***** mundialis *****/
+
+#mundialis {
+    opacity: 0;
+}
+
+body.impress-on-mundialis #mundialis {
+    transition:  opacity 2s;
+    opacity: 1;
+}
+
+.impress-on-mundialis #welcome-mundialis {
+    opacity: 0.5;
+}
+
+div#mundialis {
+    padding-left: 0;
+}
+
+div#mundialis h3 {
+    color: #394e50;
+}
+
+.table-img {
+    width: 320px;
+    height: 229px;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-img img {
+    max-height: 320px;
+    max-width: none;
+    min-width: 100%;
+    min-height: 229px;
+}
+
+/***** content + overviews *****/
+
+body.impress-on-content #welcome { opacity: 1 }
+body.impress-on-full #welcome { opacity: 1 }
+body.impress-on-full2 #welcome { opacity: 1 }
+body.impress-on-full3 #welcome { opacity: 1 }
+
+/***** actinia *****/
+/* #actinia-intro1.future { opacity: 0; } */
+#actinia-intro1.future { opacity: 0.3; }
+#actinia-intro1 { opacity: 1; }
+#actinia-intro1.past { opacity: 0.3; }
+
+div#actinia-intro2 img,
+div#actinia-intro3 img {
+    width: 77%;
+}
+
+div#actinia-intro6 img,
+div#actinia-intro7 img,
+div#actinia-intro8 img {
+    width: 100%;
+}
+
+div#actinia-intro4 img {
+    top: 3em;
+    position: absolute;
+}
+
+/* fade out inactive slides */
+#actinia-intro2.future,
+#actinia-intro2.past,
+#actinia-intro3.future,
+#actinia-intro3.past,
+#actinia-intro4.future,
+#actinia-intro4.past,
+#actinia-intro5.future,
+#actinia-intro5.past,
+#actinia-intro6.future,
+#actinia-intro6.past,
+#actinia-intro7.future,
+#actinia-intro7.past,
+#actinia-intro8.future,
+#actinia-intro8.past {
+    opacity: 0
+}
