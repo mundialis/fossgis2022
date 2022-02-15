@@ -278,6 +278,10 @@ img.flexchild {
     width: 300px
 }
 
+img.flexchild2 {
+    width: 615px
+}
+
 p.center {
     text-align: center;
 }
@@ -331,6 +335,8 @@ body.impress-on-content #welcome { opacity: 1 }
 body.impress-on-full #welcome { opacity: 1 }
 body.impress-on-full2 #welcome { opacity: 1 }
 body.impress-on-full3 #welcome { opacity: 1 }
+body.impress-on-full4 #welcome { opacity: 1 }
+body.impress-on-overview #welcome { opacity: 1 }
 
 /***** actinia *****/
 /* #actinia-intro1.future { opacity: 0; } */
