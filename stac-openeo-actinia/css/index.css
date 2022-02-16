@@ -45,6 +45,12 @@ body {
     background: #fff;
 }
 
+#welcome {
+    background: url(../resources/img/world-white_marble.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h1 {
     font-family: 'ZenTokyoZoo', 'Open Sans', sans-serif;
     font-size: 3em;
@@ -95,14 +101,6 @@ a:focus {
     color: rgb(103, 103, 103);
 }
 
-pre {
-    font-size: small;
-}
-
-code {
-    background-color: #f4f3efa6!important;
-}
-
 hr {
     border-width: 2px;
     border-style: solid;
@@ -134,11 +132,19 @@ hr {
 
 .impress-enabled .step.active { opacity: 1 }
 
+pre {
+    font-size: xx-large;
+    margin-bottom: 4em;
+    display: inline-block;
+}
 
+.pre-small > pre > code {
+    font-size: 16px;
+}
 
 /* Highlight.js used for coloring pre > code blocks. */
 pre > code {
-    font-size: 14px;
+    font-size: 23px;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
@@ -216,33 +222,55 @@ img.bg {
     transition:  opacity 2s;
 }
 #actinia-bg-image {
-    right: 0px;
-    top: 0px;
-    height: 20em;
+    left: 0px;
+    bottom: 60px;
+    height: 16em;
 }
 body.impress-on-stac #stac-bg-image,
 body.impress-on-stac-item #stac-bg-image,
 body.impress-on-stac-collection #stac-bg-image,
 body.impress-on-stac-catalog #stac-bg-image,
-body.impress-on-stac-openeo #stac-bg-image,
+body.impress-on-actinia-stac-plugin1 #stac-bg-image,
+body.impress-on-actinia-stac-plugin2 #stac-bg-image,
+body.impress-on-actinia-stac-plugin3 #stac-bg-image,
+body.impress-on-actinia-stac-plugin4 #stac-bg-image,
+body.impress-on-actinia-stac-plugin5 #stac-bg-image,
+body.impress-on-actinia-stac-plugin6 #stac-bg-image,
+body.impress-on-actinia-stac-importer #stac-bg-image,
+body.impress-on-actinia-stac-exporter #stac-bg-image
+/* body.impress-on-stac-openeo #stac-bg-image,
 body.impress-on-actinia-stac-openeo #stac-bg-image,
 body.impress-on-conclusion #stac-bg-image,
-body.impress-on-overview #stac-bg-image {
+body.impress-on-overview #stac-bg-image  */
+{
     opacity: 0.7;
     transition:  opacity 2s;
 }
 #openeo-bg-image {
     left: 0px;
-    bottom: 0px;
+    top: 0px;
     height: 14em;
 }
-body.impress-on-actinia #actinia-bg-image,
-body.impress-on-actinia-stac-plugin #actinia-bg-image,
-body.impress-on-importer#actinia-bg-image,
-body.impress-on-exporter#actinia-bg-image,
-body.impress-on-actinia-stac-openeo #actinia-bg-image,
+body.impress-on-actinia-intro1 #actinia-bg-image,
+body.impress-on-actinia-intro2 #actinia-bg-image,
+body.impress-on-actinia-intro3 #actinia-bg-image,
+body.impress-on-actinia-intro4 #actinia-bg-image,
+body.impress-on-actinia-intro5 #actinia-bg-image,
+body.impress-on-actinia-intro6 #actinia-bg-image,
+body.impress-on-actinia-intro7 #actinia-bg-image,
+body.impress-on-actinia-intro8 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin1 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin2 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin3 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin4 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin5 #actinia-bg-image,
+body.impress-on-actinia-stac-plugin6 #actinia-bg-image,
+body.impress-on-actinia-stac-importer #actinia-bg-image,
+body.impress-on-actinia-stac-exporter #actinia-bg-image
+/* body.impress-on-actinia-stac-openeo #actinia-bg-image,
 body.impress-on-conclusion #actinia-bg-image,
-body.impress-on-overview #actinia-bg-image {
+body.impress-on-overview #actinia-bg-image { */
+{
     opacity: 0.7;
     transition:  opacity 2s;
 }
@@ -267,28 +295,38 @@ body.impress-on-overview #openeo-bg-image {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: right;
 }
 
-.flexchild {
+/* .flexchild {
     margin: 5%;
-}
+} */
 
 img.flexchild {
-    width: 300px
+    width: 555px
 }
 
 img.flexchild2 {
     width: 615px
 }
 
-p.center {
+box {
+    height: 133px;
+    border: solid #97BF0D 5px;
+    margin: 1%;
+    width: 28%;
     text-align: center;
 }
 
-#welcome .flexchild {
-    margin-top: 7em;
+p.center {
+    text-align: center;
+    font-size: 0.9em;
 }
+
+/* #welcome .flexchild {
+    margin-top: 7em;
+} */
 
 /***** mundialis *****/
 
@@ -339,10 +377,12 @@ body.impress-on-full4 #welcome { opacity: 1 }
 body.impress-on-overview #welcome { opacity: 1 }
 
 /***** actinia *****/
-/* #actinia-intro1.future { opacity: 0; } */
-#actinia-intro1.future { opacity: 0.3; }
+#actinia-intro1.future.step:not(.active) { opacity: 0; }
 #actinia-intro1 { opacity: 1; }
-#actinia-intro1.past { opacity: 0.3; }
+#actinia-intro1.past.step:not(.active) { opacity: 0.3; }
+body.impress-on-actinia-intro1 #welcome { opacity: 0 }
+body.impress-on-actinia-intro2 #welcome { opacity: 0 }
+
 
 div#actinia-intro2 img,
 div#actinia-intro3 img {
@@ -361,19 +401,37 @@ div#actinia-intro4 img {
 }
 
 /* fade out inactive slides */
-#actinia-intro2.future,
-#actinia-intro2.past,
-#actinia-intro3.future,
-#actinia-intro3.past,
-#actinia-intro4.future,
-#actinia-intro4.past,
-#actinia-intro5.future,
-#actinia-intro5.past,
-#actinia-intro6.future,
-#actinia-intro6.past,
-#actinia-intro7.future,
-#actinia-intro7.past,
-#actinia-intro8.future,
-#actinia-intro8.past {
+#actinia-intro2.actinia-intro.future.step:not(.active),
+#actinia-intro2.actinia-intro.past.step:not(.active),
+#actinia-intro3.actinia-intro.future.step:not(.active),
+#actinia-intro3.actinia-intro.past.step:not(.active),
+#actinia-intro4.actinia-intro.future.step:not(.active),
+#actinia-intro4.actinia-intro.past.step:not(.active),
+#actinia-intro5.actinia-intro.future.step:not(.active),
+#actinia-intro5.actinia-intro.past.step:not(.active),
+#actinia-intro6.actinia-intro.future.step:not(.active),
+#actinia-intro6.actinia-intro.past.step:not(.active),
+#actinia-intro7.actinia-intro.future.step:not(.active),
+#actinia-intro7.actinia-intro.past.step:not(.active),
+#actinia-intro8.actinia-intro.future.step:not(.active),
+#actinia-intro8.actinia-intro.past.step:not(.active) {
     opacity: 0
 }
+
+/***** stac *****/
+#stac.past.step:not(.active) { opacity: 0.3; }
+body.impress-on-stac2 #stac { opacity: 1 }
+
+/* fade out inactive slides
+#stac.future.step:not(.active),
+/* #stac.past.step:not(.active), */
+#stac-item.future.step:not(.active),
+#stac-item.past.step:not(.active),
+#stac-collection.future.step:not(.active),
+#stac-collection.past.step:not(.active),
+#stac-catalog.future.step:not(.active),
+#stac-catalog.past.step:not(.active) {
+    opacity: 0
+}
+
+/***** actinia stac *****/
