@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>STAC und openEO in der Praxis</title>
+    <link href="css/impress-common.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resources/extras/highlight/styles/github.css">
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!-- Some images that are fixed to background in the css -->
+<img id="stac-bg-image" class="bg" src="resources/img/STAC-03.png">
+<img id="openeo-bg-image" class="bg" src="resources/img/openeo_logo.png">
+<img id="actinia-bg-image" class="bg" src="resources/img/actinia_Logo.svg">
+
+
+
+<div id="impress" data-transition-duration="1000">
+
+<!-- WELCOME ################################################################-->
+<div id="welcome" class="step" data-scale="50" data-x="0" data-y="0">
+<h1>STAC und openEO in der Praxis:</h1>
+<h2>Integration in actinia</h2>
+<div class="flexparent">
+  <img class="flexchild" src="resources/img/abc_aso.svg">
+</div>
+<p class="center">Carmen Tawalika - mundialis - FOSSGIS 2022</p>
+</div>
+
+<!-- MUNDIALIS ##############################################################-->
+<div id="mundialis" class="step slide" data-x="0" data-y="20000" data-scale="5" data-z="10">
+  <h1>mundialis GmbH & Co. KG</h1>
+  <table id="ma">
+  <tr>
+  <td><div class="table-img"><img src="resources/img/MA/tb_2019.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/mj_2019.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_202010_Mundialis_Loki.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_JO.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/ME_cut.jpg"></div></td>
+</tr>
+<tr>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_CT.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201803_Mundialis_AW.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_202010_Mundialis_GR.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JULI0220_JH_Zuschnitt_kl.jpg"></td>
+    <td><div class="table-img"><img src="resources/img/MA/JULI0187_MMA_Zuschnitt_kl.jpg"></td>
+    </tr>
+    <tr>
+  <td><div class="table-img"><img src="resources/img/MA/JHE_cut.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201803_Mundialis_MM.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_TA.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_HP.jpg"></div></td>
+  <td><div class="table-img"><img src="resources/img/MA/JoHempel_201709_Mundialis_MN.jpg"></div></td>
+</tr>
+</table>
+</div>
+
+<!-- CONTENT ##############################################################-->
+<div id="content" class="step markdown" data-scale="50" data-x="0" data-y="0">
+<!-- * actinia
+* STAC
+* actinia + STAC
+  * actinia-stac-plugin
+  * importer
+  * exporter
+* openEO
+* actinia + STAC + openEO
+  * openeo-grassgis-driver -->
+</div>
+
+<!-- ACTINIA ################################################################-->
+<div id="actinia-intro1" class="step slide" data-x="-23000" data-y="8000" data-z="-10" data-scale="10">
+<a href="https://mundialis.github.io/fossgis2020/grass-gis-in-the-cloud-actinia-geoprocessing/index.html">
+<img src="resources/img/actinia-intro-de/1.svg"></a>
+</div>
+<div id="actinia-intro2" class="step slide actinia-intro" data-rel-x="-1600" data-rel-y="-900">
+<img src="resources/img/actinia-intro/2_grass.svg">
+</div>
+<div id="actinia-intro3" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/3_grass.svg">
+</div>
+<div id="actinia-intro4" class="step slide actinia-intro" data-rel-x="1200" data-rel-y="300">
+<img src="resources/img/actinia-intro-de/4_rest.svg">
+</div>
+<div id="actinia-intro5" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/5_cloud.svg">
+</div>
+<div id="actinia-intro6" class="step slide actinia-intro" data-rel-x="1400" data-rel-y="0">
+<img src="resources/img/actinia-intro/6_example.svg">
+</div>
+<div id="actinia-intro7" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro/7_example.svg">
+</div>
+<div id="actinia-intro8" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0">
+<img src="resources/img/actinia-intro-de/8_example.svg">
+</div>
+
+<div id="full" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="50">
+</div>
+
+
+<!-- STAC### ################################################################-->
+<div id="stac" class="step" data-x="-13000" data-y="9000" data-scale="6">
+<h1>STAC</h1>
+<p><b>S</b>patio<b>T</b>emporal <b>A</b>sset <b>C</b>atalog - Gemeinsame Sprache zur Beschreibung raum- und zeitbezogener Daten</p>
+<br>
+<b>Ziele</b>
+<br>
+<ul>
+  <li>Daten können <b>leichter indiziert</b> werden</li>
+  <li>Daten können <b>leichter gefunden</b> werden</li>
+  <li><b>kein neuer Code nötig</b> bei Veröffentlichung von neuem Datensatz / API</li>
+</ul>
+
+<b>Konzepte</b>
+<div class="flexparent">
+  <box>
+    <code>Item</code>
+  </box>
+  <box>
+    <code>Catalog</code>
+    </box>
+    <box>
+      <code>Collection</code>
+  </box>
+</div>
+</div>
+
+<div id="stac-item" class="step markdown" data-rel-x="-2860" data-rel-y="1800" data-z="-10" data-scale="1">
+# STAC Item
+  * Einzelnes __raum-zeitliches Asset__
+    * GeoJSON mit Geometrie (bbox), Eigenschaften und Links. `datetime` ist erforderliche Eigenschaft
+    * Andere mögliche Felder: Thumbnail, Asset-Links (Download, Streaming), Relationship-Links, STAC Content Extensions
+  * Verbindung zu genau einer Collection
+    * Benötigt __Link zur übergeordneten Collection__
+  * __Baumblatt__
+</div>
+
+<div id="stac-catalog" class="step markdown" data-rel-x="2550" data-rel-y="0" data-scale="1">
+# STAC Catalog
+  * Hat ID, Beschreibung, stac_version und Links
+  * Bietet Strukturelemente zur __Gruppierung von Items und Collections__
+    * Aufteilung übermäßig großer Collections in Gruppen
+    * Gruppieren von Collections als Einstiegspunkt in eine STAC-Objekthierarchie (Wurzelknoten)
+</div>
+
+<div id="stac-collection" class="step markdown" data-rel-x="2550" data-rel-y="0" data-scale="1">
+# STAC Collection
+  * __Catalog, der mehr erforderliche Metadaten enthält__ und eine Gruppe zusammengehöriger Objekte beschreibt
+    * Hat alle Felder eines Catalogs + Lizenz und Extent
+  * Kann sowohl übergeordnete Catalogs und Collections als auch untergeordnete Items, Catalogs und Collections haben. Muss keine haben
+  * __Verlinken idealerweise auf umfassendere Metadaten__ (ISO 19115, etc.), sofern verfügbar
+</div>
+
+<div id="stac2" class="step" data-x="-13000" data-y="9000" data-scale="6">
+</div>
+
+<div id="full2" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="50">
+</div>
+
+
+<!-- STAC + ACTINIA #########################################################-->
+<div id="actinia-stac-plugin1" class="step markdown" data-x="0" data-y="0" data-scale="2">
+# actinia-stac-plugin
+![actinia-stac-plugin](resources/img/actinia-stac-plugin.jpeg)
+
+- Über das Plugin wird actinia selbst zu einem STAC
+- Vorhandene __Collections__ können geharvested werden,
+  - um als __Input Datensatz für actinia gelistet__ werden zu können
+  - um __in Prozessierungen verwendet__ werden zu können
+- Bisher wurden zwei Ressourcen implementiert:
+  - `/instances`: Virtueller Raum, in dem Collections gespeichert werden können. Eine Instanz ist dabei immer eine STAC Instanz, von der geharvested wird
+  - `/collections`: Gehören immer zu einer Instanz.
+  Da zwei Instanzen die gleiche Collection enthalten können, wird eine interne ID zugeordnet:
+  `stac.{{ stac_instance_id }}.rastercube.{{ stac_collection_id }}`
+
+</div>
+
+<div id="actinia-stac-plugin2" class="step markdown json" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# CREATE: POST `/instances`
+
+    $ cat stac.json
+    {
+        "stac_instance_id": "dlr"
+    }
+
+
+    curl -X POST -u $user:$pw -d @stac.json https://actinia-dev.mundialis.de/api/v3/stac/instances
+    {
+      "StacInstance": null,
+      "message": "The Instance has been added successfully"
+    }
+
+</div>
+
+  <div id="actinia-stac-plugin3" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# CREATE: POST `/collections`
+
+    $ cat stac.json
+    {
+        "stac_instance_id": "dlr",
+        "stac_url": "https://geoserver.dlr.loose.eox.at/ogc/stac/collections/S2_L2A_MSI_COG"
+    }
+
+
+    curl -X POST -u $user:$pw -d @stac.json https://actinia-dev.mundialis.de/api/v3/stac/collections
+    {
+      "StacCollection": {
+        "stac.dlr.rastercube.S2_L2A_MSI_COG": {
+          "href": "api/v3/stac/collections/stac.dlr.rastercube.S2_L2A_MSI_COG",
+          "root": "https://geoserver.dlr.loose.eox.at/ogc/stac/collections/S2_L2A_MSI_COG"
+        }
+      },
+      "message": "The STAC Collection has been added successfully"
+    }
+
+  </div>
+<div id="actinia-stac-plugin4" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# READ: GET `/instances`
+
+    curl -u $user:$pw https://actinia-dev.mundialis.de/api/v3/stac/instances
+    {
+      "defaultStac": {
+        "path": "stac.defaultStac.rastercube.< stac_collection_id >"
+      },
+      "dlr": {
+        "path": "stac.dlr.rastercube.< stac_collection_id >"
+      }
+    }
+
+
+    curl -u $user:$pw https://actinia-dev.mundialis.de/api/v3/stac/instances/dlr
+    {
+      "stac.dlr.rastercube.S2_L2A_MSI_COG": {
+        "href": "api/v3/stac/collections/stac.dlr.rastercube.S2_L2A_MSI_COG",
+        "root": "https://geoserver.dlr.loose.eox.at/ogc/stac/collections/S2_L2A_MSI_COG"
+      }
+    }
+
+
+```
+
+</div>
+
+<div id="actinia-stac-plugin5" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# READ: GET `/collections`
+
+    # curl -u $user:$pw https://actinia-dev.mundialis.de/api/v3/stac/collections/stac.dlr.rastercube.S2_L2A_MSI_COG
+    curl -u $user:$pw https://actinia-dev.mundialis.de/api/v3/stac/collections
+
+    {
+      "collections": [
+        {
+          "id": "stac.dlr.rastercube.S2_L2A_MSI_COG",
+          "title": "Sentinel-2 L2A MSI Products (Cloud-Optimized)",
+          "extent": {
+            "spatial": {"bbox": [[ 30.1918571065124, -16.3692458600817, 42.834039161154, -0.2636709443366629]]},
+            "temporal": {"interval": [["2020-01-01T07:33:35.000+00:00","2020-12-30T08:03:03.000+00:00"]]}
+          },
+          "links": [
+            {
+              "href": "https://geoserver.dlr.loose.eox.at/ogc/stac/collections/S2_L2A_MSI_COG?f=application/json",
+              "rel": "self",
+              "type": "application/json"
+            },
+            ...
+          ],
+          ...
+        }
+      ]
+    }
+
+</div>
+
+
+<div id="actinia-stac-plugin6" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# DELETE `/instances`
+
+    $ curl -X DELETE -u $user:$pw https://actinia-dev.mundialis.de/api/v3/stac/instances/dlr
+    {
+      "message": "The instance --dlr-- was deleted with all the collections stored inside"
+    }
+
+# DELETE `/collections`
+
+    $ curl -X DELETE -u $user:$pw \
+      https://actinia-dev.mundialis.de/api/v3/stac/collections/stac.dlr.rastercube.S2_L2A_MSI_COG
+    {}
+
+  </div>
+
+<div id="actinia-stac-importer" class="step markdown pre-small" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# actinia STAC importer
+Nutzung der gespeicherten Collections in Prozessketten
+
+    {
+      "list": [{
+          "id": "importer_1",
+          "module": "importer",
+          "inputs": [{
+              "import_descr": {
+                  "source": "stac.defaultStac.rastercube.landsat-8-l1-c1",
+                  "type": "stac",
+                  "semantic_label": "B1",
+                  "extent": {
+                      "spatial": {
+                          "bbox": [[30.192, -16.369, 42.834, -0.264]]
+                      },
+                      "temporal":{
+                          "interval": [["2021-09-09", "2021-09-12"]]
+                      }
+                  },
+                  "filter": {}
+              },
+              "param": "map",
+              "value": "example-red"
+          }
+          ]
+      }],
+      "version": 1
+    }
+
+
+    $ curl -u $user:$pw -d @test -H 'Content-Type: application/json' \
+      https://actinia-dev.mundialis.de/api/v3/locations/nc_spm_08/processing_async_export
+
+
+</div>
+
+<div id="actinia-stac-exporter" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+# actinia STAC exporter
+
+Erzeugung eines STAC Items für eine Ergebnis-Rasterkarte, Instanz gleich Nutzername
+
+    {
+      "list": [
+        {
+          "module": "r.slope.aspect",
+          ...
+          "outputs": [
+          {
+              "param": "slope",
+              "value": "elev_ned_30m_slope",
+              "metadata": {
+                "format": "STAC",
+                "type": "metadata",
+                "output_layer": "stac"
+              }
+            }
+          ]
+        }
+      ],
+      "version": "1"
+    }
+
+
+</div>
+
+<div id="full3" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="50">
+</div>
+
+<!-- OPENEO #########################################################-->
+<div id="openeo" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
+# openEO API
+
+![openeo.org](resources/img/openeo.org.jpeg)
+
+* Offene API, um Clients mit großen Erdbeobachtungs-Cloud-Backends zu verbinden
+* Jeder Client kann mit jedem Backend sprechen
+* Backends werden vergleichbar
+* Funktionalitäten:
+  * Listet verfügbare Erdbeobachtungsdaten und -prozesse in Cloud-Backends
+  * Ausführen von (verkettete) Prozesse auf Backends
+  * Herunterladen von (Zwischen-)Ergebnissen
+  * Verwaltung von Benutzerinhalten einschließlich der Rechnungsstellung
+
+</div>
+
+<div id="openeo2" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
+
+# openEO - wichtige Endpunkte
+
+* Grundlegende Metadaten für alle Datensätze
+  * `GET /collections`
+* Vollständige Metadaten für einen bestimmten Datensatz
+  * `GET /collections/{collection_id}`
+* Unterstützte vordefinierte Prozesse
+  * `GET /processes`
+* Einen neuen Batchjob erstellen
+  * `POST /jobs`
+* Alle Batchjobs auflisten
+  * `GET /jobs`
+* Starten der Verarbeitung eines Batchjob
+  * `POST /jobs/{job_id}/results`
+* Herunterladen von Ergebnissen für einen abgeschlossenen Batchjob
+  * `GET /jobs/{job_id}/results`
+
+</div>
+
+
+<!-- STAC + OPENEO #########################################################-->
+<div id="openeo-stac" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
+
+# openEO + STAC Endpunkte
+
+* Grundlegende Metadaten für alle Datensätze
+  * `GET /collections`
+* Vollständige Metadaten für einen bestimmten Datensatz
+  * `GET /collections/{collection_id}`
+
+-> Collection-Spezifikation kann eigenständig verwendet werden zur Beschreibung von
+Datenaggregationen, keine Links zu Unterkatalogen und Objekten nötig
+
+__STAC API Empfehlungen__
+
+* Data Discovery wie in openEO (OGC Features)
+  * `GET /collections`
+  * `GET /collections/{collection_id}`
+* STAC volle Implementierung, **nicht** in openEO
+  * `GET /collections/{collectionId}/items`
+  * `GET /collections/{collectionId}/items/{featureId}`
+
+</div>
+
+<div id="full4" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="50">
+</div>
+
+<!-- ACTINIA + OPENEO ################################################-->
+<div id="openeo-grassgis-driver" class="step markdown" data-x="12000" data-y="-2000" data-scale="8">
+# openeo-grassgis-driver
+![openeo-grassgis-driver auf GitHUb](resources/img/openeo-grassgis-driver-github.jpeg)
+
+* Backend Implementierung der openEO API in Python
+* GRASS GIS als Prozessier-Backend, kommuniziert per HTTP mit actinia
+</div>
+
+<!-- STAC + ACTINIA + OPENEO ################################################-->
+<div id="actinia-stac-openeo" class="step markdown" data-x="28000" data-y="-5000" data-scale="10">
+![openeo-webeditor](resources/img/openeo-stac.jpeg)
+</div>
+
+<div id="actinia-stac-openeo2" class="step markdown" data-re-x="0" data-rel-y="10000" data-scale="10">
+![openeo-collections1](resources/img/openeo-collection1.jpeg)
+![openeo-collections2](resources/img/openeo-collection2.jpeg)
+</div>
+
+<div id="actinia-stac-openeo3" class="step markdown" data-re-x="0" data-rel-y="10000" data-scale="10">
+![openeo-process](resources/img/webeditor_pg.jpeg)
+![openeo-process](resources/img/webeditor_job.jpeg)
+</div>
+
+<div id="conclusion" class="step markdown" data-x="0" data-y="0" data-z="0" data-scale="50">
+</div>
+
+<div id="overview" class="step slide markdown" data-x="0" data-y="0" data-z="0" data-scale="90">
+# Vielen Dank! Fragen?
+</div>
+
+<div id="impress-toolbar"></div>
+
+<div class="impress-progressbar"><div></div></div>
+<div class="impress-progress"></div>
+
+<div id="impress-help"></div>
+<script type="text/javascript" src="resources/extras/highlight/highlight.pack.js"></script>
+<!-- <script type="text/javascript" src="resources/extras/mermaid/mermaid.min.js"></script> -->
+<script type="text/javascript" src="resources/extras/markdown/markdown.js"></script>
+<script type="text/javascript" src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
