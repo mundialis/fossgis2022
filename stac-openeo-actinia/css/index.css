@@ -67,13 +67,6 @@ h3 {
     font-weight: normal;
 }
 
-h2,
-p,
-li,
-table {
-    /* font-family: 'Chilanka', 'Open Sans', sans-serif; */
-}
-
 h4 {
     font-weight: normal;
     margin: 0;
@@ -93,9 +86,8 @@ li {
 a {
     color: inherit;
     text-decoration: none;
-    padding: 0;
+    padding: 0 0.1em;
 }
-
 a:hover,
 a:focus {
     color: rgb(103, 103, 103);
@@ -105,32 +97,6 @@ hr {
     border-width: 2px;
     border-style: solid;
 }
-
-
-/***** General Presentation *****/
-.step {
-    position: relative;
-    box-sizing: border-box;
-    width: 1500px;
-    height: 950px;
-    padding: 40px 60px;
-    margin: 20px auto;
-    color: rgb(90, 90, 90);
-    font-size: 30px;
-    line-height: 1.3;
-    border: solid red 1px;
-}
-
-/*
-    Make inactive steps a little bit transparent.
-*/
-.impress-enabled .step {
-    margin: 0;
-    opacity: 0.3;
-    transition: opacity 1s;
-}
-
-.impress-enabled .step.active { opacity: 1 }
 
 pre {
     font-size: xx-large;
@@ -154,63 +120,39 @@ code {
     background-color: #f4f3efa6!important;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-    padding: 0 0.1em;
-    /* background: rgba(200,200,200,0.3);
-    text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
-    border-radius: 0.2em;
-    border-bottom: 1px solid rgba(100,100,100,0.4);
-    border-left:   1px solid rgba(100,100,100,0.4);
-    transition:         0.5s; */
-}
-a:hover,
-a:focus {
-    /* background: rgba(200,200,200,1);
-    text-shadow: -1px 1px 2px rgba(100,100,100,0.5); */
-    color: rgb(103, 103, 103);
-}
-
-/* blockquote {
-    font-family: 'PT Serif';
-    font-style: italic;
-    font-weight: 400;
-}
-
-em {
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-}
-
-strong {
-    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
-}
-
-q {
-    font-family: 'PT Serif';
-    font-style: italic;
-    font-weight: 400;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-}
-
-strike {
-    opacity: 0.7;
-}
-
-small {
-    font-size: 0.4em;
-}
-
-*/
-/* img {
-    width: 300px
-} */
 img {
     width: 90%;
     float: left;
     margin-left: 40px;
     margin-top: 0px;
 }
+
+
+/***** General Presentation *****/
+.step {
+    position: relative;
+    box-sizing: border-box;
+    width: 1500px;
+    height: 950px;
+    padding: 40px 60px;
+    margin: 20px auto;
+    color: rgb(90, 90, 90);
+    font-size: 30px;
+    line-height: 1.3;
+    border: solid red 1px;
+}
+
+/*
+    Make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    transition: opacity 1s;
+}
+.impress-enabled .step.future { opacity: 0; }
+.impress-enabled .step.active { opacity: 1 ; }
+.impress-enabled .step.past { opacity: 0.3; }
+
 
 /****************** Background images **********************************************/
 img.bg {
@@ -237,11 +179,10 @@ body.impress-on-actinia-stac-plugin4 #stac-bg-image,
 body.impress-on-actinia-stac-plugin5 #stac-bg-image,
 body.impress-on-actinia-stac-plugin6 #stac-bg-image,
 body.impress-on-actinia-stac-importer #stac-bg-image,
-body.impress-on-actinia-stac-exporter #stac-bg-image
-/* body.impress-on-stac-openeo #stac-bg-image,
+body.impress-on-actinia-stac-exporter #stac-bg-image,
 body.impress-on-actinia-stac-openeo #stac-bg-image,
-body.impress-on-conclusion #stac-bg-image,
-body.impress-on-overview #stac-bg-image  */
+body.impress-on-actinia-stac-openeo2 #stac-bg-image,
+body.impress-on-actinia-stac-openeo3 #stac-bg-image
 {
     opacity: 0.7;
     transition:  opacity 2s;
@@ -266,10 +207,11 @@ body.impress-on-actinia-stac-plugin4 #actinia-bg-image,
 body.impress-on-actinia-stac-plugin5 #actinia-bg-image,
 body.impress-on-actinia-stac-plugin6 #actinia-bg-image,
 body.impress-on-actinia-stac-importer #actinia-bg-image,
-body.impress-on-actinia-stac-exporter #actinia-bg-image
-/* body.impress-on-actinia-stac-openeo #actinia-bg-image,
-body.impress-on-conclusion #actinia-bg-image,
-body.impress-on-overview #actinia-bg-image { */
+body.impress-on-actinia-stac-exporter #actinia-bg-image,
+body.impress-on-openeo-grassgis-driver #actinia-bg-image,
+body.impress-on-actinia-stac-openeo #actinia-bg-image,
+body.impress-on-actinia-stac-openeo2 #actinia-bg-image,
+body.impress-on-actinia-stac-openeo3 #stac-bg-image
 {
     opacity: 0.7;
     transition:  opacity 2s;
@@ -280,10 +222,13 @@ body.impress-on-overview #actinia-bg-image { */
     height: 20em;
 }
 body.impress-on-openeo #openeo-bg-image,
-body.impress-on-stac-openeo #openeo-bg-image,
+body.impress-on-openeo2 #openeo-bg-image,
+body.impress-on-openeo-stac #openeo-bg-image,
+body.impress-on-openeo-grassgis-driver #openeo-bg-image,
 body.impress-on-actinia-stac-openeo #openeo-bg-image,
-body.impress-on-conclusion #openeo-bg-image,
-body.impress-on-overview #openeo-bg-image {
+body.impress-on-actinia-stac-openeo2 #openeo-bg-image,
+body.impress-on-actinia-stac-openeo3 #stac-bg-image
+{
     opacity: 0.7;
     transition:  opacity 2s;
 }
@@ -295,20 +240,11 @@ body.impress-on-overview #openeo-bg-image {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
     justify-content: right;
 }
 
-/* .flexchild {
-    margin: 5%;
-} */
-
 img.flexchild {
     width: 555px
-}
-
-img.flexchild2 {
-    width: 615px
 }
 
 box {
@@ -323,10 +259,6 @@ p.center {
     text-align: center;
     font-size: 0.9em;
 }
-
-/* #welcome .flexchild {
-    margin-top: 7em;
-} */
 
 /***** mundialis *****/
 
@@ -374,15 +306,14 @@ body.impress-on-full #welcome { opacity: 1 }
 body.impress-on-full2 #welcome { opacity: 1 }
 body.impress-on-full3 #welcome { opacity: 1 }
 body.impress-on-full4 #welcome { opacity: 1 }
+body.impress-on-conclusion #welcome { opacity: 1 }
 body.impress-on-overview #welcome { opacity: 1 }
 
 /***** actinia *****/
 #actinia-intro1.future.step:not(.active) { opacity: 0; }
-#actinia-intro1 { opacity: 1; }
-#actinia-intro1.past.step:not(.active) { opacity: 0.3; }
+#actinia-intro1.past.step:not(.active) { opacity: 0.7; }
 body.impress-on-actinia-intro1 #welcome { opacity: 0 }
 body.impress-on-actinia-intro2 #welcome { opacity: 0 }
-
 
 div#actinia-intro2 img,
 div#actinia-intro3 img {
@@ -419,7 +350,7 @@ div#actinia-intro4 img {
 }
 
 /***** stac *****/
-#stac.past.step:not(.active) { opacity: 0.3; }
+#stac.past.step:not(.active) { opacity: 0.7; }
 body.impress-on-stac2 #stac { opacity: 1 }
 
 /* fade out inactive slides
@@ -435,3 +366,40 @@ body.impress-on-stac2 #stac { opacity: 1 }
 }
 
 /***** actinia stac *****/
+#actinia-stac-plugin1.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-plugin2.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-plugin3.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-plugin4.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-plugin5.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-plugin6.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-importer.past.step:not(.active) { opacity: 0.7; }
+#actinia-stac-exporter.past.step:not(.active) { opacity: 0.7; }
+
+#actinia-stac-plugin1 img {
+    float: right;
+    width: 44%;
+}
+
+/***** openeo *****/
+#openeo2.past.step:not(.active) { opacity: 0; }
+#openeo-stac.past.step:not(.active) { opacity: 0; }
+#openeo img {
+    float: right;
+    width: 44%;
+}
+body.impress-on-openeo #openeo2 { opacity: 0 }
+body.impress-on-openeo #openeo-stac { opacity: 0 }
+body.impress-on-openeo2 #openeo { opacity: 0 }
+body.impress-on-openeo2 #openeo-stac { opacity: 0 }
+body.impress-on-openeo-stac #openeo { opacity: 0 }
+body.impress-on-openeo-stac #openeo2 { opacity: 0 }
+
+/***** actinia + openeo *****/
+#openeo-grassgis-driver img {
+    float: right;
+    width: 44%;
+}
+/***** actinia + openeo + stac *****/
+#actinia-stac-openeo2 img {
+    width: 615px
+}

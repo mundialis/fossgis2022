@@ -34,7 +34,7 @@
 
 <!-- MUNDIALIS ##############################################################-->
 <div id="mundialis" class="step slide" data-x="0" data-y="20000" data-scale="5" data-z="10">
-  <h2>mundialis GmbH & Co. KG</h2>
+  <h1>mundialis GmbH & Co. KG</h1>
   <table id="ma">
   <tr>
   <td><div class="table-img"><img src="resources/img/MA/tb_2019.jpg"></div></td>
@@ -165,8 +165,10 @@
 
 
 <!-- STAC + ACTINIA #########################################################-->
-<div id="actinia-stac-plugin1" class="step markdown" data-x="-2000" data-y="0" data-scale="2">
+<div id="actinia-stac-plugin1" class="step markdown" data-x="0" data-y="0" data-scale="2">
 # actinia-stac-plugin
+![actinia-stac-plugin](resources/img/actinia-stac-plugin.jpeg)
+
 - Über das Plugin wird actinia selbst zu einem STAC
 - Vorhandene __Collections__ können geharvested werden,
   - um als __Input Datensatz für actinia gelistet__ werden zu können
@@ -179,12 +181,12 @@
 
 </div>
 
-<div id="actinia-stac-plugin2" class="step markdown" data-rel-x="0" data-rel-y="2200" data-scale="2">
+<div id="actinia-stac-plugin2" class="step markdown json" data-rel-x="0" data-rel-y="2200" data-scale="2">
 # CREATE: POST `/instances`
 
     $ cat stac.json
     {
-        "stac_instance_id": "dlr",
+        "stac_instance_id": "dlr"
     }
 
 
@@ -325,7 +327,7 @@ Nutzung der gespeicherten Collections in Prozessketten
 
 
     $ curl -u $user:$pw -d @test -H 'Content-Type: application/json' \
-      https://actinia-dev.mundialis.de/api/v3/locations/nc_spm_08/processing_async_export | jq
+      https://actinia-dev.mundialis.de/api/v3/locations/nc_spm_08/processing_async_export
 
 
 </div>
@@ -363,74 +365,100 @@ Erzeugung eines STAC Items für eine Ergebnis-Rasterkarte, Instanz gleich Nutzer
 </div>
 
 <!-- OPENEO #########################################################-->
-<div id="openeo" class="step markdown" data-x="-18000" data-y="-5000" data-scale="4">
+<div id="openeo" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
 # openEO API
 
-openEO entwickelt eine offene API, um Clients (z.B. geschrieben in R, Python, JavaScript und andere) auf einfache und einheitliche Weise mit großen Erdbeobachtungs-Cloud-Backends zu verbinden.
+![openeo.org](resources/img/openeo.org.jpeg)
+
+* Offene API, um Clients mit großen Erdbeobachtungs-Cloud-Backends zu verbinden
 * Jeder Client kann mit jedem Backend sprechen
-* Backends werden vergleichbar im Hinblick auf Kapazität, Kosten und Ergebnisse (Validierung, Reproduzierbarkeit)
-
-Die openEO-API gibt einen Überblick darüber, wie man
-
-* herauszufinden, welche Erdbeobachtungsdaten und -prozesse in Cloud-Backends verfügbar sind,
-* (verkettete) Prozesse auf Back-Ends auszuführen,
-* benutzerdefinierte Funktionen (UDFs) auf Back-Ends auszuführen, wobei die UDFs auf unterschiedliche Weise mit den Daten in Kontakt kommen können,
-* Herunterladen von (Zwischen-)Ergebnissen und
-* Verwaltung von Benutzerinhalten einschließlich der Rechnungsstellung.
+* Backends werden vergleichbar
+* Funktionalitäten:
+  * Listet verfügbare Erdbeobachtungsdaten und -prozesse in Cloud-Backends
+  * Ausführen von (verkettete) Prozesse auf Backends
+  * Herunterladen von (Zwischen-)Ergebnissen
+  * Verwaltung von Benutzerinhalten einschließlich der Rechnungsstellung
 
 </div>
+
+<div id="openeo2" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
+
+# openEO - wichtige Endpunkte
+
+* Grundlegende Metadaten für alle Datensätze
+  * `GET /collections`
+* Vollständige Metadaten für einen bestimmten Datensatz
+  * `GET /collections/{collection_id}`
+* Unterstützte vordefinierte Prozesse
+  * `GET /processes`
+* Einen neuen Batchjob erstellen
+  * `POST /jobs`
+* Alle Batchjobs auflisten
+  * `GET /jobs`
+* Starten der Verarbeitung eines Batchjob
+  * `POST /jobs/{job_id}/results`
+* Herunterladen von Ergebnissen für einen abgeschlossenen Batchjob
+  * `GET /jobs/{job_id}/results`
+
+</div>
+
 
 <!-- STAC + OPENEO #########################################################-->
-<div id="stac-openeo" class="step markdown" data-rel-x="-1000" data-rel-y="-100" data-scale="1">
-# common endpoint
+<div id="openeo-stac" class="step markdown" data-x="-19000" data-y="-3000" data-scale="4">
 
+# openEO + STAC Endpunkte
 
-> Die Collection-Spezifikation kann ganz einfach eigenständig verwendet werden - sie dient zur Beschreibung
-Datenaggregation zu beschreiben und benötigt keine Links zu Unterkatalogen und Objekten.
-[...] Sie haben oft ein optimiertes internes Format, bei dem es keinen Sinn macht
-als Items darzustellen. OpenEO und Google Earth Engine sind zwei Beispiele, die nur STAC
-Sammlungen, ...
+* Grundlegende Metadaten für alle Datensätze
+  * `GET /collections`
+* Vollständige Metadaten für einen bestimmten Datensatz
+  * `GET /collections/{collection_id}`
 
-# STAC API Empfehlungen
-* Data Discovery wie in openeo (STAC + OGC features)
-  * GET /collections
-  * GET /collections/{collection_id}
-* STAC volle Implementierung, **nicht** in openeo
-  * GET /collections/{collectionId}/items
-  * GET /collections/{collectionId}/items/{featureId}
+-> Collection-Spezifikation kann eigenständig verwendet werden zur Beschreibung von
+Datenaggregationen, keine Links zu Unterkatalogen und Objekten nötig
 
-</div>
+__STAC API Empfehlungen__
 
-<div id="openeo-grassgis-driver" class="step markdown" data-rel-x="2000" data-rel-y="0" data-scale="1">
-# openeo-grassgis-driver
-* Backend Implementierung von openEO API in python
-* https://github.com/Open-EO/openeo-grassgis-driver
-* Kommuniziert über actinia per HTTP mit GRASS GIS
+* Data Discovery wie in openEO (OGC Features)
+  * `GET /collections`
+  * `GET /collections/{collection_id}`
+* STAC volle Implementierung, **nicht** in openEO
+  * `GET /collections/{collectionId}/items`
+  * `GET /collections/{collectionId}/items/{featureId}`
+
 </div>
 
 <div id="full4" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="50">
 </div>
 
+<!-- ACTINIA + OPENEO ################################################-->
+<div id="openeo-grassgis-driver" class="step markdown" data-x="12000" data-y="-2000" data-scale="8">
+# openeo-grassgis-driver
+![openeo-grassgis-driver auf GitHUb](resources/img/openeo-grassgis-driver-github.jpeg)
 
-<!-- STAC + ACTINIA + OPENEO ################################################-->
-<div id="actinia-stac-openeo" class="step" data-x="16000" data-y="-12000" data-scale="6">
-  <h2>actinia + STAC + openEO</h2>
-  <img src="resources/img/openeo-stac.jpeg">
-
+* Backend Implementierung der openEO API in Python
+* GRASS GIS als Prozessier-Backend, kommuniziert per HTTP mit actinia
 </div>
 
-<div id="actinia-stac-openeo2" class="step" data-x="16000" data-y="-7000" data-scale="6">
-  <h1>actinia + STAC + openEO</h1>
-  <img class="flexchild2" src="resources/img/openeo-collection1.jpeg">
-  <img class="flexchild2" src="resources/img/openeo-collection2.jpeg">
+<!-- STAC + ACTINIA + OPENEO ################################################-->
+<div id="actinia-stac-openeo" class="step markdown" data-x="28000" data-y="-5000" data-scale="10">
+![openeo-webeditor](resources/img/openeo-stac.jpeg)
+</div>
 
+<div id="actinia-stac-openeo2" class="step markdown" data-re-x="0" data-rel-y="10000" data-scale="10">
+![openeo-collections1](resources/img/openeo-collection1.jpeg)
+![openeo-collections2](resources/img/openeo-collection2.jpeg)
+</div>
+
+<div id="actinia-stac-openeo3" class="step markdown" data-re-x="0" data-rel-y="10000" data-scale="10">
+![openeo-process](resources/img/webeditor_pg.jpeg)
+![openeo-process](resources/img/webeditor_job.jpeg)
 </div>
 
 <div id="conclusion" class="step markdown" data-x="0" data-y="0" data-z="0" data-scale="50">
-  # Conclusion
 </div>
 
-<div id="overview" class="step slide" data-x="0" data-y="0" data-z="0" data-scale="70">
+<div id="overview" class="step slide markdown" data-x="0" data-y="0" data-z="0" data-scale="90">
+# Vielen Dank! Fragen?
 </div>
 
 <div id="impress-toolbar"></div>
