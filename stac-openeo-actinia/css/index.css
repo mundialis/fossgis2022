@@ -139,7 +139,7 @@ img {
     color: rgb(90, 90, 90);
     font-size: 30px;
     line-height: 1.3;
-    border: solid red 1px;
+    /* border: solid red 1px; */
 }
 
 /*
