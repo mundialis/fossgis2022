@@ -283,6 +283,11 @@ div#mundialis h3 {
     color: #394e50;
 }
 
+table#ma {
+    position: relative;
+    right: 4em;
+}
+
 .table-img {
     width: 320px;
     height: 229px;
